@@ -1,0 +1,33 @@
+{% load static  %}
+<link href="{% static 'forex/bootstrap.css' %}" rel="stylesheet" id="bootstrap-css">
+<br>
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="{% url 'weather' %}" method="POST"  class="form-control" >
+                {% csrf_token %}
+                <label class="col-form-label">Enter a city name</label>
+                {{ form.name }}
+                <button class=" btn-default" type="submit">Check</button>
+
+            </form>
+        </div>
+    </div>
+
+        <div class="row form-row">
+            {% for c in r %}
+            <div class="col-lg-6">
+                <h4 class="card-header">Weather Result</h4>
+            <div class="card-body">
+                <img src="{{c.icon}}.png" alt="">
+                   <p class="card-text">{{ c.city }}</p>
+                   <p class="card-text">{{ c.description }}</p>
+                   <p class="card-text">{{ c.temperature }}F</p>
+
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
