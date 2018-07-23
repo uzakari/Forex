@@ -66,8 +66,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  /*background-color: #fff;*/
-  background-image: url("f9.png");
+  background-color: #fff;
+
 }
 
 [tabindex="-1"]:focus {
@@ -4390,7 +4390,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #40ca90;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -6095,7 +6095,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #15402e !important;
+  background-color: #40ca90 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,

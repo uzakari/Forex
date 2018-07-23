@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Forex Access</title>
+    <title></title>
      <link rel="icon" href="{% static 'forex/Forexaccess_3D.png' %}" type="image/x-icon">
     <!-- Bootstrap core CSS -->
        <link rel="stylesheet" href="{% static 'forex/bootstrap.css' %}">
@@ -26,7 +26,9 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">Forex Access</a>
+        <div class="header">
+        <a href="{% url 'index' %}"> <img src="{% static 'forex/logo.png' %}" alt="forexaccesslogo"> </a>
+       </div>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,7 +76,7 @@
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('static/forex/f3.jpg')">
+          <div class="carousel-item" style="background-image: url('static/forex/ft22.jpg')">
             <div class="carousel-caption d-none d-md-block">
               <h3>Third Slide</h3>
               <p>This is a description for the third slide.</p>
@@ -167,7 +169,7 @@
       <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" src="{% static 'forex/ft1.JPG' %}" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Check current weather</a>
@@ -184,7 +186,7 @@
           {% for com in comment %}
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" src="{% static 'forex/ft2.JPG' %}" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project Two</a>

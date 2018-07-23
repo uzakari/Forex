@@ -4,6 +4,9 @@ from django.http import HttpResponse
 import stripe
 from .models import City, Comment
 from .forms import CityForm, BlogPostForm, RegisterForm
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
 # Create your views here.
 
 pub_key = 'pk_test_cV5Fqg1yaTYLigI26KmLVa63'
@@ -33,7 +36,13 @@ def pricing(request):
 
 
 def register(request):
-    form = RegisterForm()
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = RegisterForm()
     context = {'form': form}
     return render(request, 'forex/contact.html', context)
 
@@ -80,6 +89,17 @@ def BlogPost(request):
     context = {'form': form}
     return render(request, 'forex/Blogpost.html', context)
 
+
+def handler404(request):
+    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    response = render_to_response('500.html', {}, context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
      
 
         
