@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 # Create your models here.
 
 
@@ -21,19 +22,17 @@ class Comment(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('comment')
+
 
 class Register(models.Model):
     First_name = models.CharField(max_length=30)
     Last_name = models.CharField(max_length=40)
     email = models.EmailField()
-    GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-        ('U', 'Unsure')
-    )
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     city = models.CharField(max_length=50)
-    password = models.CharField(max_length=50, default=None)
+    password = models.CharField(max_length=50)
 
     def __str__(self):
         return self.First_name
+

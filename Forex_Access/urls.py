@@ -16,7 +16,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from forex.sitemaps import CommentSitemaps, StaticViewSitemap
+from forex import views
+
+from django.contrib.sitemaps.views import sitemap
+
+
+sitemaps = {
+    'posts': CommentSitemaps,
+    'static': StaticViewSitemap,
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('forex.urls'))
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('', include('forex.urls')),
+    path('comment/', views.BlogPost, name='comment'),
+    path('about/', views.about, name='about'),
+    path('about/', views.about, name='about'),
+    path('pricing/', views.pricing, name='pricing'),
+    path('services/', views.services, name='services'),
+    path('register/', views.register, name='register'),
+    path('payment/', views.payment_stripe, name='payment'),
+    path('weather/', views.weather, name='weather'),
 ]
+

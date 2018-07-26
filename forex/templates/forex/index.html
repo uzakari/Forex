@@ -1,59 +1,12 @@
+{% extends 'forex/Base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title></title>
-     <link rel="icon" href="{% static 'forex/Forexaccess_3D.png' %}" type="image/x-icon">
-    <!-- Bootstrap core CSS -->
-       <link rel="stylesheet" href="{% static 'forex/bootstrap.css' %}">
-{#    <link href="{% static 'forex/bootstrap.min.css'%}" rel="stylesheet">#}
 
 
-      <!-- Custom styles for this template -->
-    <link href="{% static 'forex/modern-business.css' %}" rel="stylesheet">
+    {% block content %}
 
-  </head>
-
-
-
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <div class="header">
-        <a href="{% url 'index' %}"> <img src="{% static 'forex/logo.png' %}" alt="forexaccesslogo"> </a>
-       </div>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'services' %}">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'register' %}">Register</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="{% url 'post' %}">Write Post</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+           <header>
+             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -92,10 +45,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </header>
+           </header>
 
-    <!-- Page Content -->
-    <div class="container">
 
       <h1 class="my-4">Welcome to Forex Access</h1>
 
@@ -127,6 +78,7 @@
                       <li>Minimum Trade size 0.01 lot</li>
                 </ul>
             </div>
+
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Learn More</a>
                 <p><form action="{% url 'payment' %}" method="POST">{% csrf_token %}
@@ -236,22 +188,5 @@
           <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
         </div>
       </div>
-
-    </div>
+    {% endblock %}
     <!-- /.container -->
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src=" static/forex/jquery.min.js"></script>
-    <script src="static/forex/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html>

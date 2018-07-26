@@ -1,57 +1,13 @@
+{% extends 'forex/Base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Forex Access</title>
-    <link rel="icon" href="{% static 'forex/Forexaccess_3D.png' %}" type="image/x-icon">
-    <!-- Bootstrap core CSS -->
-      <link rel="stylesheet" href="{% static 'forex/bootstrap.css' %}">
-
-    <!-- Custom styles for this template -->
-    <link href="{% static 'forex/modern-business.css' %}" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-  <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">Forex Access</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'services' %}">Services</a>
-            </li>
-               <li class="nav-item">
-              <a class="nav-link" href="{% url 'register' %}">Register</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="{% url 'post' %}">Write Post</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </nav>
 
     <!-- Page Content -->
-    <div class="container">
-       <br>
+
       <!-- Intro Content -->
+    {% block content %}
+        <br>
+        <br>
       <div class="row">
         <div class="col-lg-6">
           <img class="img-fluid rounded" src="{% static '/forex/f5.jpg' %}" alt="">
@@ -134,21 +90,5 @@
       </div>
       <!-- /.row -->
 
-    </div>
+    {% endblock %}
     <!-- /.container -->
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="static/forex/jquery.min.js"></script>
-    <script src="static/forex/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html>

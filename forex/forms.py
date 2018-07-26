@@ -20,11 +20,10 @@ class BlogPostForm(ModelForm):
 class RegisterForm(ModelForm):
     class Meta:
         model = Register
-        fields = ['First_name', 'Last_name', 'email', 'gender', 'city',  'password']
+        fields = ['First_name', 'Last_name', 'email', 'city',  'password']
         widgets = {'First_name': TextInput(attrs={'class': 'form-control'}),
                    'Last_name':   TextInput(attrs={'class': 'form-control'}),
                    'email':  TextInput(attrs={'class': 'form-control'}),
-                   'gender': Select(attrs={'class': 'form-check-input,col-md-6, form-check-inline, form-check-label'}),
                    'password': TextInput(attrs={'class': 'form-control'})}
 
 
